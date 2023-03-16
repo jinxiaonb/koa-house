@@ -1,0 +1,22 @@
+{
+  "name": "koa-house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jinxiaonb/koa-house.git"
+  },
+  "keywords": [
+    "koa2"
+  ],
+  "author": "xiaojin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jinxiaonb/koa-house/issues"
+  },
+  "homepage": "https://github.com/jinxiaonb/koa-house#readme"
+}
