@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init_sql": "node ./db/index.js",
+    "init_data": "node ./reptile/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/jinxiaonb/koa-house/issues"
   },
-  "homepage": "https://github.com/jinxiaonb/koa-house#readme"
+  "homepage": "https://github.com/jinxiaonb/koa-house#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "mysql": "^2.18.1"
+  }
 }

@@ -8,7 +8,14 @@ const db = {
      * 
     */
     mysql_local: {
-
+        port: 3001,
+        database: {
+            DATABASE: 'hz_house',
+            USERNAME: 'root',
+            PASSWORD: 'jx@123qwe',
+            PORT: '3306',
+            HOST: 'localhost'
+        }
     },
     /**
      * 
