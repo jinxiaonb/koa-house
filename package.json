@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "init_sql": "node ./db/index.js",
-    "init_data": "node ./reptile/index.js"
+    "init_data": "node ./reptile/index.js",
+    "test": "node ./reptile/app.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,13 @@
   "homepage": "https://github.com/jinxiaonb/koa-house#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "koa": "^2.14.1",
+    "koa-bodyparser": "^4.4.0",
+    "koa-logger": "^3.2.1",
+    "koa-mysql-session": "0.0.2",
+    "koa-session-minimal": "^4.0.3",
+    "koa-static": "^5.0.0",
+    "koa-views": "^8.0.0",
     "mysql": "^2.18.1"
   }
 }
