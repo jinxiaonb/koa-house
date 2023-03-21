@@ -16,10 +16,13 @@ const getData = {
         let options = addressInfo.getUrl();
         for (let i = 1; i <= pageTotal; i++) {
             // let reqUrl = baseUrl + i + '/';
-            let _cur = Object.create({});
-            Object.assign(_cur, options)
+            // let _cur = Object.create({});
+            let _cur = Object.assign({}, options);//浅拷贝，对象里面的对象引用或者修改会同时起作用，此处应该用递归进行深拷贝，因cookie存储在header中没有进行修改，故用浅拷贝代替。
             _cur['path'] = _cur.path + i + '/';
+            // _cur['headers'] = { Cookie: i };
+            // _cur.headers.Cookie = i;
             // console.log(_cur);
+            // console.log(options);
             this.getJson(_cur, i);
         }
     },
@@ -41,7 +44,7 @@ const getData = {
 
     },
     getData(options, targetUrl) {
-        console.log(options, targetUrl);
+        // console.log(options, targetUrl);
 
         https.get(options, function (res) {
             // 分段返回的 自己拼接
