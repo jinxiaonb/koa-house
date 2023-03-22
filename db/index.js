@@ -1,6 +1,9 @@
 const getSqlContentMap = require('./util/get-sql-content-map');
 const { query } = require('./execute/mysql');
 
+/**
+ * 执行本地的sql文件
+*/
 
 // 获取所有sql脚本内容
 let sqlContentMap = getSqlContentMap();
