@@ -36,7 +36,7 @@ const urlInfo = {
      * @param { number | string } page 第几页
      * */
     getDownloadUrl(type) { //`./reptile/images/${i}.png`
-        let getUrl = config.target_base + type + "/";
+        let getUrl = config.target_base + config['target_' + type];
         return getUrl;
     }
 }

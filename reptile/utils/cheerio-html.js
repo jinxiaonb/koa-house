@@ -1,5 +1,6 @@
 
 const cheerio = require('cheerio');
+const pathParse = require('./path-parse');
 
 const cheerioHtml = {
     xiaoqu: function (_html) {
@@ -22,13 +23,15 @@ const cheerioHtml = {
 
 
             const pic = $('.img img.lj-lazy', this).attr('data-original').trim();
+
+            const name = pathParse.getFileName(href);
             // console.log(pic);
             // console.log(title,star,pic);
             // 存 数据库
             // 没有数据库存成一个json文件 fs
 
             _array.push({
-                title, href, star, pic
+                title, href, star, pic, name
             });
         });
         return _array;

@@ -4,6 +4,7 @@ const fs = require('fs');
 const urlInfo = require('./../utils/url-info');
 const request = require('./../utils/request');
 const cheerioHtml = require('./../utils/cheerio-html');
+const downLoad = require('./../utils/down-load');
 
 const getData = {
     /**
@@ -17,28 +18,18 @@ const getData = {
             let _cur = Object.assign({}, options);//浅拷贝，对象里面的对象引用或者修改会同时起作用，此处应该用递归进行深拷贝，因cookie存储在header中没有进行修改，故用浅拷贝代替。
             _cur['path'] = _cur.path + i + '/';
 
-            let _target = urlInfo.getTargetUrl(i, pathType, 'json');
+            let _target = urlInfo.getTargetUrl(i, pathType, 'json'); //
+            let _targetDown = urlInfo.getDownloadUrl('images');//根据不同文件类型得到不同文件路径
 
             request.get(_cur).then(_html => {
-                console.log(_html);
+                // console.log(_html);
                 const _array = cheerioHtml.ershoufang(_html);
-                this.writeData(_target, _array);//写入文件到本地硬盘
-
+                downLoad.writeData(_array, _target);//写入文件到本地硬盘
+                downLoad.images(_array, _targetDown)
             });
         }
     },
-    cheerioHtml(_html) {
-        
-    },
-    writeData(_target, _array) {
-        fs.writeFile(_target, JSON.stringify(_array), function (err) {
-            if (!err) {
-                console.log('文件写入完毕');
-            } else {
-                console.log(err);
-            }
-        });
-    },
+    
     downloadImage(_array) {
         for (let i = 0; i < _array.length; i++) {
             const picUrl = _array[i].pic;
