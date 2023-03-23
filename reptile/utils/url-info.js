@@ -16,7 +16,7 @@ const urlInfo = {
         // let getUrl = config.url + config.path + config.pages;//+ page + '/';// 'https://hz.ke.com/ershoufang/pg' + page + '/';
         let obj = {
             host: config.host,
-            path: config[pathType] ? config[pathType] : config.path + config.pages,
+            path: (config[pathType + '_path'] ? config[pathType + '_path'] : config.path) + config.pages,
             method: 'get',
             headers: config.headers
         };
@@ -27,8 +27,8 @@ const urlInfo = {
      * 生成文件的目录
      * @param { number | string } page 第几页
      * */
-    getTargetUrl(page, type) { // './reptile/hzershoufang_pg' + page + '.json';
-        let getUrl = config.target_base + type + config.target_file + page + '.' + type;
+    getTargetUrl(page, targetFile, fileType) { // './reptile/hzershoufang_pg' + page + '.json';
+        let getUrl = config.target_base + config['target_' + fileType] + config.abbr + config['target_' + targetFile + '_path'] + page + '.' + fileType;
         return getUrl;
     },
     /**

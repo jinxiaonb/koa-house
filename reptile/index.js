@@ -52,8 +52,8 @@ function getMovieTop250() {
 
 
 function getHZErShouFang(page) {
-    let reqUrl = "https://hz.ke.com/ershoufang/pg1/";////'https://hz.ke.com/ershoufang/pg' + page + '/';
-    let targetUrl = './reptile/dist/hzershoufang_pg' + page + '.json';
+    let reqUrl = "https://hz.ke.com/xiaoqu/pg1/";////'https://hz.ke.com/ershoufang/pg' + page + '/';
+    let targetUrl = './reptile/dist/json/xiaoqu_pg' + page + '.json';
     console.log(reqUrl, targetUrl);
     let options = {
         host: "hz.ke.com",
