@@ -1,0 +1,106 @@
+{
+  "status": "1",
+  "info": "OK",
+  "infocode": "10000",
+  "count": "1",
+  "suggestion": { "keywords": [], "cities": [] },
+  "districts": [
+    {
+      "citycode": [],
+      "adcode": "330000",
+      "name": "浙江省",
+      "center": "120.152575,30.266619",
+      "level": "province",
+      "districts": [
+        {
+          "citycode": "0580",
+          "adcode": "330900",
+          "name": "舟山市",
+          "center": "122.207395,29.985578",
+          "level": "city",
+          "districts": []
+        },
+        {
+          "citycode": "0573",
+          "adcode": "330400",
+          "name": "嘉兴市",
+          "center": "120.755623,30.746814",
+          "level": "city",
+          "districts": []
+        },
+        {
+          "citycode": "0574",
+          "adcode": "330200",
+          "name": "宁波市",
+          "center": "121.62454,29.860258",
+          "level": "city",
+          "districts": []
+        },
+        {
+          "citycode": "0576",
+          "adcode": "331000",
+          "name": "台州市",
+          "center": "121.42079,28.655716",
+          "level": "city",
+          "districts": []
+        },
+        {
+          "citycode": "0577",
+          "adcode": "330300",
+          "name": "温州市",
+          "center": "120.699279,27.993849",
+          "level": "city",
+          "districts": []
+        },
+        {
+          "citycode": "0570",
+          "adcode": "330800",
+          "name": "衢州市",
+          "center": "118.859307,28.970229",
+          "level": "city",
+          "districts": []
+        },
+        {
+          "citycode": "0572",
+          "adcode": "330500",
+          "name": "湖州市",
+          "center": "120.086881,30.894178",
+          "level": "city",
+          "districts": []
+        },
+        {
+          "citycode": "0575",
+          "adcode": "330600",
+          "name": "绍兴市",
+          "center": "120.582886,30.051549",
+          "level": "city",
+          "districts": []
+        },
+        {
+          "citycode": "0579",
+          "adcode": "330700",
+          "name": "金华市",
+          "center": "119.647265,29.079195",
+          "level": "city",
+          "districts": []
+        },
+        {
+          "citycode": "0578",
+          "adcode": "331100",
+          "name": "丽水市",
+          "center": "119.923249,28.467694",
+          "level": "city",
+          "districts": []
+        },
+        {
+          "citycode": "0571",
+          "adcode": "330100",
+          "name": "杭州市",
+          "center": "120.210792,30.246026",
+          "level": "city",
+          "districts": []
+        }
+      ]
+    }
+  ]
+}
