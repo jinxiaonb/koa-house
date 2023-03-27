@@ -12,24 +12,30 @@ const getData = {
      * @param { number } pageTotal 总页数
      * */
     getDataByType(pageTotal, pathType) {
-        let options = urlInfo.getUrl(pathType);
+
+        let pathArray = pathType.split('/');
+
+        let options = urlInfo.getUrl(pathArray);
+
+        // console.log(options);
 
         for (let i = 1; i <= pageTotal; i++) {
             let _cur = Object.assign({}, options);//浅拷贝，对象里面的对象引用或者修改会同时起作用，此处应该用递归进行深拷贝，因cookie存储在header中没有进行修改，故用浅拷贝代替。
             _cur['path'] = _cur.path + i + '/';
 
-            let _target = urlInfo.getTargetUrl(i, pathType, 'json'); //
-            let _targetDown = urlInfo.getDownloadUrl('images');//根据不同文件类型得到不同文件路径
-
+            let _target = urlInfo.getTargetUrl(i, pathArray, 'json'); //
+            let _targetDown = urlInfo.getDownloadUrl(pathArray, 'images');//根据不同文件类型得到不同文件路径
+            // console.log(_targetDown);
             request.get(_cur).then(_html => {
                 // console.log(_html);
-                const _array = cheerioHtml.ershoufang(_html);
+                const _array = cheerioHtml[pathArray[0]](_html);
+                // console.log(_array.length);
                 downLoad.writeData(_array, _target);//写入文件到本地硬盘
-                downLoad.images(_array, _targetDown)
+                // downLoad.images(_array, _targetDown);//下载图片
             });
         }
     },
-    
+
     downloadImage(_array) {
         for (let i = 0; i < _array.length; i++) {
             const picUrl = _array[i].pic;

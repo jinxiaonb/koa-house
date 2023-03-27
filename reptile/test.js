@@ -1,3 +1,3 @@
 const xiaoquSpider = require('./spider/xiaoqu');
 
-xiaoquSpider.test(1, 'ershoufang')
+xiaoquSpider.test(1, 'xiaoqu/xihu')
