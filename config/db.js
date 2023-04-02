@@ -14,7 +14,9 @@ const db = {
             USERNAME: 'root',
             PASSWORD: 'jx@123qwe',
             PORT: '3306',
-            HOST: 'localhost'
+            HOST: 'localhost',
+            connectionLimit: 10,
+            acquireTimeout: 5000
         }
     },
     /**

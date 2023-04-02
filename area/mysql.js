@@ -7,7 +7,9 @@ const pool = mysql.createPool({
     host: dbConfig.HOST,
     user: dbConfig.USERNAME,
     password: dbConfig.PASSWORD,
-    database: dbConfig.DATABASE
+    database: dbConfig.DATABASE,
+    connectionLimit: dbConfig.connectionLimit,
+    acquireTimeout: dbConfig.acquireTimeout
 });
 // console.log(pool);
 let query = function (sql, values) {
