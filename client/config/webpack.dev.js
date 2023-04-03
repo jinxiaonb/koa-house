@@ -5,6 +5,7 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const base = require('./webpack.base.js');
 const env = require('./dev.env.js');
@@ -45,5 +46,6 @@ module.exports = merge(base, {
                 NODE_ENV: JSON.stringify(env.NODE_ENV),
             },
         }),
+        new BundleAnalyzerPlugin()
     ],
 })

@@ -1,18 +1,11 @@
 import '@/index.scss';
+import img from '@/test.jpg'
 
 
-const heading = document.createElement('h1');
-heading.textContent = 'Hello, First!';
+import { createApp } from 'vue';
+import App from './App.vue';
 
-document.body.appendChild(heading);
+// Vue.config.productionTip = false;
 
-
-async function test(){
-     await test3();
-}
-
-function test3(){
-    console.log('test3');
-}
-
-test();
+let app = createApp(App);
+app.mount('#app');
