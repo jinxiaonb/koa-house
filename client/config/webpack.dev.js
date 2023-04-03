@@ -10,8 +10,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const base = require('./webpack.base.js');
 const env = require('./dev.env.js');
 
-const dotenv = require('dotenv').config({ path: '.env' });
-console.log(process.env);
+const dotenv = require('dotenv').config({ path: '.env.development' });// 读取根目录下的.env.development文件
+// console.log(process.env);
 
 // console.log(path.join(__dirname, '../dist'));
 

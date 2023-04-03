@@ -1,5 +1,4 @@
-import '@/index.scss';
-import img from '@/test.jpg'
+import '@scss/index.scss';
 
 
 import { createApp } from 'vue';

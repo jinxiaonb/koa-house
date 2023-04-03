@@ -20,6 +20,12 @@ module.exports = {
         alias: {
             // 配置别名
             '@': path.resolve(path.dirname(__dirname), 'src'),
+            '@assets': path.resolve(path.dirname(__dirname), 'src/assets'),// 存放图片、音频、视频
+            '@scss': path.resolve(path.dirname(__dirname), 'src/scss'),// 存放scss,css,sass文件
+            '@router': path.resolve(path.dirname(__dirname), 'src/router'),// 存放路由文件
+            '@store': path.resolve(path.dirname(__dirname), 'src/store'),// 存放vuex文件
+            '@views': path.resolve(path.dirname(__dirname), 'src/views'),// 存放html文件
+            '@comp': path.resolve(path.dirname(__dirname), 'src/components'),// 存放组件文件
         },
     },
     externals: {
@@ -47,6 +53,9 @@ module.exports = {
                         maxSize: 10 * 1024,
                     },
                 },
+                generator:{
+                    filename:'imgs/[name]_[hash:8][ext]'
+                }
             },
             {
                 test: /\.vue$/,
@@ -57,7 +66,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/index.html'),//
+            template: path.resolve(__dirname, '../src/views/index.html'),//
         }),
         new VueLoaderPlugin(),
         new DefinePlugin({

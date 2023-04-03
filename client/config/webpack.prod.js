@@ -17,7 +17,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");//压缩css
 const TerserPlugin = require("terser-webpack-plugin");
 
 
-const dotenv = require('dotenv').config();
+const dotenv = require('dotenv').config({ path: '.env.production' });
 console.log(dotenv);
 
 module.exports = merge(base, {
