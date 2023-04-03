@@ -1,5 +1,5 @@
 /**
- * 
+ * 局部配置
 */
 
 module.exports = {

@@ -16,6 +16,10 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");//压缩css
 
 const TerserPlugin = require("terser-webpack-plugin");
 
+
+const dotenv = require('dotenv').config();
+console.log(dotenv);
+
 module.exports = merge(base, {
     mode: env.NODE_ENV,
     devtool: env.devtool,
@@ -42,6 +46,7 @@ module.exports = merge(base, {
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify(env.NODE_ENV),
+                DOT_ENV: JSON.stringify(dotenv.parsed)
             },
         }),
         new ProgressBarPlugin({

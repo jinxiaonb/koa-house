@@ -2,6 +2,9 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const { DefinePlugin } = require('webpack')
+
+// const dotenv = require('dotenv').config();
+// console.log(dotenv);
 // const isDev = process.env.NODE_ENV === 'development';
 
 // console.log(path.dirname(__dirname));
@@ -48,18 +51,18 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
-                // include: [path.resolve(__dirname, '../src')]
+                include: [path.resolve(__dirname, '../src')]
             }
         ],
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/index.html'),
+            template: path.resolve(__dirname, '../src/index.html'),//
         }),
         new VueLoaderPlugin(),
         new DefinePlugin({
-            __VUE_PROD_DEVTOOLS__: false,
-            __VUE_OPTIONS_API__: false,
+            __VUE_PROD_DEVTOOLS__: false,//
+            __VUE_OPTIONS_API__: false,//
         }),
         // new MiniCssExtractPlugin({
         //     filename: 'css/[name].[contenthash].css',

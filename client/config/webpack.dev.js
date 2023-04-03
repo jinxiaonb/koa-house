@@ -10,6 +10,9 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const base = require('./webpack.base.js');
 const env = require('./dev.env.js');
 
+const dotenv = require('dotenv').config({ path: '.env' });
+console.log(process.env);
+
 // console.log(path.join(__dirname, '../dist'));
 
 module.exports = merge(base, {
@@ -44,6 +47,7 @@ module.exports = merge(base, {
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify(env.NODE_ENV),
+                DOT_ENV: JSON.stringify(dotenv.parsed)
             },
         }),
         new BundleAnalyzerPlugin()
