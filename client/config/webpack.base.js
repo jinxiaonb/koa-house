@@ -9,11 +9,10 @@ const { DefinePlugin } = require('webpack')
 
 // console.log(path.dirname(__dirname));
 module.exports = {
-    entry: path.resolve(__dirname, '../src/index.js'),
-    output: {
+    entry: path.resolve(__dirname, '../src/index.js'),//入口文件
+    output: {// 出口目录及文件
         path: path.join(__dirname, '../dist'),
-        filename: '[name].[contenthash].js',
-        clean: true
+        filename: '[name].[contenthash].js'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.vue'], // 省略文件后缀
@@ -28,7 +27,7 @@ module.exports = {
             '@comp': path.resolve(path.dirname(__dirname), 'src/components'),// 存放组件文件
         },
     },
-    externals: {
+    externals: {//打包不包括的库
         'vue': 'Vue',
         'vue-router': 'VueRouter'
     },
@@ -53,8 +52,16 @@ module.exports = {
                         maxSize: 10 * 1024,
                     },
                 },
-                generator:{
-                    filename:'imgs/[name]_[hash:8][ext]'
+                generator: {
+                    filename: 'asset/imgs/[name]_[hash:8][ext]'
+                }
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2|)$/,
+                type: 'asset/resource',
+                generator: {
+                    // 输出文件位置以及文件名
+                    filename: 'assets/fonts/[hash:8].[name][ext]'
                 }
             },
             {
@@ -66,7 +73,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '../src/views/index.html'),//
+            template: path.resolve(__dirname, '../src/views/index.html'),// 模板文件
         }),
         new VueLoaderPlugin(),
         new DefinePlugin({

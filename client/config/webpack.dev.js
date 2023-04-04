@@ -19,7 +19,7 @@ module.exports = merge(base, {
     mode: env.NODE_ENV,
     // stats: env.stats, // 去除控制台webpack打印的无用信息
     devtool: env.devtool,
-    devServer: {
+    devServer: {// 
         static: {
             directory: path.join(__dirname, '../dist'),
         },
@@ -50,6 +50,6 @@ module.exports = merge(base, {
                 DOT_ENV: JSON.stringify(dotenv.parsed)
             },
         }),
-        new BundleAnalyzerPlugin()
+        new BundleAnalyzerPlugin(),//生成的文件分析大小，用于优化
     ],
 })
