@@ -9,9 +9,10 @@ import App from './App.vue';
 // Vue.config.productionTip = false;//vue的提示，在生产环境下需要设置为false
 
 import router from '@router/index';
+import store from '@store/index';
 
 let app = createApp(App);
 
-app.use(router).mount('#app');
+app.use(router).use(store).mount('#app');
 
 

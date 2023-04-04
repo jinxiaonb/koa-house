@@ -29,7 +29,8 @@ module.exports = {
     },
     externals: {//打包不包括的库
         'vue': 'Vue',
-        'vue-router': 'VueRouter'
+        'vue-router': 'VueRouter',
+        'vuex':'Vuex'
     },
     module: {
         rules: [
