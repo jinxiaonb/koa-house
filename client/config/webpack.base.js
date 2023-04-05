@@ -19,6 +19,7 @@ module.exports = {
         alias: {
             // 配置别名
             '@': path.resolve(path.dirname(__dirname), 'src'),
+            '@api': path.resolve(path.dirname(__dirname), 'src/api'),// 存放图片、音频、视频
             '@assets': path.resolve(path.dirname(__dirname), 'src/assets'),// 存放图片、音频、视频
             '@scss': path.resolve(path.dirname(__dirname), 'src/scss'),// 存放scss,css,sass文件
             '@router': path.resolve(path.dirname(__dirname), 'src/router'),// 存放路由文件
