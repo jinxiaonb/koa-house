@@ -8,19 +8,20 @@ const path = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const base = require('./webpack.base.js');
+
 const env = require('./dev.env.js');
 
 const dotenv = require('dotenv').config({ path: '.env.development' });// 读取根目录下的.env.development文件
 // console.log(process.env);
-console.log(dotenv.parsed.VUE_APP_BASE_URL);
+// console.log(dotenv.parsed.VUE_APP_BASE_URL);
 
-// console.log(path.join(__dirname, '../dist'));
 
 module.exports = merge(base, {
     mode: env.NODE_ENV,
     // stats: env.stats, // 去除控制台webpack打印的无用信息
     devtool: env.devtool,
     devServer: {// 
+        setupMiddlewares: require('../src/mock/index.js'),
         static: {
             directory: path.join(__dirname, '../dist'),
         },

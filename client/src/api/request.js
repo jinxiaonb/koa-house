@@ -36,6 +36,7 @@ export default function request(options) {
         service.interceptors.response.use(
             (res) => {
                 const handleErrCode = res.data.code;
+                // console.log(res.data);
                 if (handleErrCode === '1') {
                     resolve(res.data);
                 } else {

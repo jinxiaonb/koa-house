@@ -32,7 +32,8 @@ module.exports = {
     externals: {//打包不包括的库
         'vue': 'Vue',
         'vue-router': 'VueRouter',
-        'vuex': 'Vuex'
+        'vuex': 'Vuex',
+        'axios': 'axios'
     },
     module: {
         rules: [
@@ -83,8 +84,5 @@ module.exports = {
             __VUE_PROD_DEVTOOLS__: false,//
             __VUE_OPTIONS_API__: false,//
         }),
-        // new MiniCssExtractPlugin({
-        //     filename: 'css/[name].[contenthash].css',
-        // }),
     ],
 };

@@ -70,15 +70,6 @@ module.exports = merge(base, {
     optimization: {
         minimize: true,
         minimizer: [
-            // {
-            //     assetNameRegExp: /\.css$/,
-            //     safe: true,
-            //     cache: true,
-            //     parallel: true,
-            //     discardComments: {
-            //         removeAll: true
-            //     }
-            // }
             new CssMinimizerPlugin({
                 test: /\.css$/,
                 parallel: true
