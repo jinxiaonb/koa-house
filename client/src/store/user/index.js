@@ -1,6 +1,6 @@
-import State from './state';
-import Mutation from './mutation';
-import Action from './action';
+import State from './state.js';
+import Mutation from './mutation.js';
+import Action from './action.js';
 
 const state = State
 

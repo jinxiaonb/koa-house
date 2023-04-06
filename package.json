@@ -53,6 +53,7 @@
     "qs": "^6.11.1",
     "style-loader": "^3.3.2",
     "terser-webpack-plugin": "^5.3.7",
+    "vconsole": "^3.15.0",
     "vue": "^3.2.47",
     "vue-loader": "^17.0.1",
     "vue-router": "^4.1.6",

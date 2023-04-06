@@ -7,7 +7,7 @@ axios.defaults.headers['Content-Type'] = 'application/json; charset=UTF-8';
 export default function request(options) {
     return new Promise((resolve, reject) => {
         const service = axios.create({
-            baseURL: '', // 
+            baseURL: process.env.DOT_ENV.VUE_APP_BASE_URL, // 
             timeout: 10000, // 超时
             withCredentials: true // 是否允许带cookie
         });

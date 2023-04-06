@@ -8,6 +8,7 @@ const { DefinePlugin } = require('webpack')
 // const isDev = process.env.NODE_ENV === 'development';
 
 // console.log(path.dirname(__dirname));
+// console.log(path.resolve(__dirname, '../../node_modules'));
 module.exports = {
     entry: path.resolve(__dirname, '../src/index.js'),//入口文件
     output: {// 出口目录及文件
@@ -15,7 +16,7 @@ module.exports = {
         filename: '[name].[contenthash].js'
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.json', '.vue'], // 省略文件后缀
+        extensions: ['.js', '.vue', '.jsx', '.json'], // 省略文件后缀
         alias: {
             // 配置别名
             '@': path.resolve(path.dirname(__dirname), 'src'),
@@ -31,7 +32,7 @@ module.exports = {
     externals: {//打包不包括的库
         'vue': 'Vue',
         'vue-router': 'VueRouter',
-        'vuex':'Vuex'
+        'vuex': 'Vuex'
     },
     module: {
         rules: [

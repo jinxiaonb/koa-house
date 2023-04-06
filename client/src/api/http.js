@@ -1,4 +1,4 @@
-import request from '@api/request';
+import request from '@api/request.js';
 
 
 export function httpPost(data, url) {

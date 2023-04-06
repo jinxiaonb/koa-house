@@ -5,7 +5,6 @@ const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const path = require('path')
 const base = require('./webpack.base.js')
-const env = require('./prod.env.js')
 // 打包进度显示
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');// 该插件已被output的clean属性取代
@@ -19,6 +18,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 
+const env = require('./prod.env.js')
 const dotenv = require('dotenv').config({ path: '.env.production' });
 // console.log(dotenv);
 
@@ -48,7 +48,7 @@ module.exports = merge(base, {
         // new CleanWebpackPlugin(),
         new webpack.DefinePlugin({// 定义全局变量
             'process.env': {
-                NODE_ENV: JSON.stringify(env.NODE_ENV),
+                PRO_ENV: JSON.stringify(env),
                 DOT_ENV: JSON.stringify(dotenv.parsed)
             },
         }),
@@ -70,7 +70,19 @@ module.exports = merge(base, {
     optimization: {
         minimize: true,
         minimizer: [
-            new CssMinimizerPlugin(),// 压缩css
+            // {
+            //     assetNameRegExp: /\.css$/,
+            //     safe: true,
+            //     cache: true,
+            //     parallel: true,
+            //     discardComments: {
+            //         removeAll: true
+            //     }
+            // }
+            new CssMinimizerPlugin({
+                test: /\.css$/,
+                parallel: true
+            }),// 压缩css
             new TerserPlugin({// 压缩js
                 parallel: true,//多进程
                 extractComments: false,//注释是否抽离

@@ -12,6 +12,7 @@ const env = require('./dev.env.js');
 
 const dotenv = require('dotenv').config({ path: '.env.development' });// 读取根目录下的.env.development文件
 // console.log(process.env);
+console.log(dotenv.parsed.VUE_APP_BASE_URL);
 
 // console.log(path.join(__dirname, '../dist'));
 
@@ -29,7 +30,15 @@ module.exports = merge(base, {
         port: 9090,
         hot: true,
         compress: true, // 开启gzip压缩
-        open: true
+        open: true,
+        // proxy: {
+        //     '/api': {
+        //         secure: false,//忽略HTTPS报错
+        //         changeOrigin: true,// 如果接口跨域，需要进行这个参数配置
+        //         target: dotenv.parsed.VUE_APP_BASE_URL,
+        //         pathRewrite: { '^/api': '' }
+        //     }
+        // }
     },
     module: {
         rules: [
@@ -46,8 +55,8 @@ module.exports = merge(base, {
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: JSON.stringify(env.NODE_ENV),
-                DOT_ENV: JSON.stringify(dotenv.parsed)
+                DEV_ENV: JSON.stringify(env),//局部env
+                DOT_ENV: JSON.stringify(dotenv.parsed),//全局env
             },
         }),
         new BundleAnalyzerPlugin(),//生成的文件分析大小，用于优化
