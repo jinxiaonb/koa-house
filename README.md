@@ -8,5 +8,5 @@
 
 ## npm 包说明
 
-1. vconsole: c查看移动端控制台信息
+1. vconsole: 查看移动端控制台信息
 2. better-mock: 在mockjs基础上进行迭代
