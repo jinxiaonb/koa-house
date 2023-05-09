@@ -5,6 +5,10 @@ module.exports = {
     /**
      * 获取用户信息
     */
+    async getUserInfo(userName) {
+        let userInfo = await userInfoService.getUserInfoByUserName(userName);
+        console.log(userInfo);
+    },
 
     async getLoginUserInfo(ctx) {
         let session = ctx.session;

@@ -32,10 +32,6 @@ let query = function (sql, values) {
     });
 };
 
-// let select = function (table, keys) {
-//     let _sql = "SELECT ?? FROM ?? "
-//     return query(_sql, [keys, table])
-// }
 
 module.exports = {
     query
