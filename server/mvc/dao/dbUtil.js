@@ -2,7 +2,7 @@ const mysql = require('mysql');
 const db = require('../../../config/db').mysql_local;
 
 const dbConfig = db.database;
-console.log(dbConfig);
+// console.log(dbConfig);
 const pool = mysql.createPool({
     host: dbConfig.HOST,
     user: dbConfig.USERNAME,
