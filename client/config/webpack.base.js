@@ -23,6 +23,7 @@ module.exports = {
             '@api': path.resolve(path.dirname(__dirname), 'src/api'),// 存放图片、音频、视频
             '@assets': path.resolve(path.dirname(__dirname), 'src/assets'),// 存放图片、音频、视频
             '@scss': path.resolve(path.dirname(__dirname), 'src/scss'),// 存放scss,css,sass文件
+            '@mock': path.resolve(path.dirname(__dirname), 'src/mock'),// 存放mock文件,
             '@router': path.resolve(path.dirname(__dirname), 'src/router'),// 存放路由文件
             '@store': path.resolve(path.dirname(__dirname), 'src/store'),// 存放vuex文件
             '@views': path.resolve(path.dirname(__dirname), 'src/views'),// 存放html文件

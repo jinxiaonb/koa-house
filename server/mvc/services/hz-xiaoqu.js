@@ -1,5 +1,5 @@
 
-const xiaoQuModel = require('./../models/hz-xiaoqu');
+const xiaoQuModel = require('./../models/hz-xiaoqu.js');
 
 /**
  * 

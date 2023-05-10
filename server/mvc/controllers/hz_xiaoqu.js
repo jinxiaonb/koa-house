@@ -1,4 +1,4 @@
-const xiaoQuService = require('./../services/hz-xiaoqu');
+const xiaoQuService = require('./../services/hz-xiaoqu.js');
 
 /**
  * 杭州小区
